@@ -1,0 +1,14 @@
+[Unit]
+Description=Closed-Loop Test Harness
+After=network.target
+
+[Service]
+Type=simple
+User=exedev
+WorkingDirectory=/home/exedev/closedloop
+ExecStart=/home/exedev/closedloop/closedloop-srv --listen :8000
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
